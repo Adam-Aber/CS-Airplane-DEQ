@@ -10,9 +10,23 @@ class Airplane {
 private:
     int Twait, Tarrival;
 public:
-    Airplane(int tarrival);
-    int getTarrival();
-    int getTwait();
+    explicit Airplane(int t) {
+        Tarrival = t;
+        Twait = 0;
+    }
+
+    int getTarrival() {
+        return Tarrival;
+    }
+
+    int getTwait() {
+        return Twait;
+    }
+
+    Airplane(void *pVoid) {
+        Tarrival = 0;
+        Twait = 0;
+    }
 };
 
 

@@ -4,13 +4,19 @@
 
 #ifndef _DEQUE_H
 #define _DEQUE_H
+
+
+
 template <typename T>
 class DEQ{
 public:
-    struct node{
+    class node{
+    public:
+        node() : data(nullptr) {};
         T data;
         node* next;
     };
+
     DEQ(){
         Front = nullptr;
         Rear = nullptr;
@@ -29,6 +35,7 @@ public:
     };
     void Add_Front(T element){
         node* NEW = new node();
+
         NEW->data = element;
         NEW->next = nullptr;
         node* temp;

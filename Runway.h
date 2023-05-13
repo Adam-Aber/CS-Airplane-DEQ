@@ -19,5 +19,20 @@ public:
     int queueLength();
 };
 
+Runway::Runway(int t) {
+    Tlanding = t;
+    // Airplane temp(0);
+    // AirplaneQ.Add_Rear(temp);
+}
+
+bool Runway::isEmpty() {
+
+    return false;
+}
+
+void Runway::addAirplane(Airplane a) {
+   AirplaneQ.Add_Rear(a);
+}
+
 
 #endif //DEQSIMULATION_RUNWAY_H
