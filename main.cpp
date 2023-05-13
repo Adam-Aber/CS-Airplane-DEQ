@@ -7,25 +7,22 @@
 #include <cstdlib>
 using namespace std;
 
-float Generate_Random(int c)
+float Generate_Random(int Dt)
 {
     float r = (rand() % 101) / 100.0;
-    return (c-0.5) + r;
+    return (Dt-0.5) + r;
 };
 
 int main() {
-
+    srand(time(NULL));
     int TLand = 10;
     int Tmax = 360; // 6 hours in minute unit
     int Dt = 6; // avg inter arrival time
 
     Runway runway(TLand);
-
-    double R = randomize(RAND_MAX); // random number between 0 and 1
-    cout << R << endl;
-    int nextPlaneIn = int(-log(1.0 - R) * Dt); // random inter arrival time based on the avg Dt
+    float nextPlaneIn = Generate_Random(Dt);
     cout << nextPlaneIn;
-
+/*
     Airplane plane1(nextPlaneIn);
     runway.addAirplane(plane1); // Add the plane to the runway queue
     cout << plane1.getTarrival();
@@ -54,6 +51,6 @@ int main() {
             runway.getFirstAirplane().decrementServiceTime();
         }
     }
-
+*/
     return 0;
 }
