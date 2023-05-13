@@ -4,19 +4,15 @@
 
 #ifndef _DEQUE_H
 #define _DEQUE_H
+#include "Airplane.h"
 
-
-
-template <typename T>
 class DEQ{
 public:
-    class node{
+    struct node{
     public:
-        node() : data(nullptr) {};
-        T data;
+        Airplane data;
         node* next;
     };
-
     DEQ(){
         Front = nullptr;
         Rear = nullptr;
@@ -33,8 +29,8 @@ public:
             return false;
         }
     };
-    void Add_Front(T element){
-        node* NEW = new node();
+    void Add_Front(Airplane element){
+        node* NEW;
 
         NEW->data = element;
         NEW->next = nullptr;
@@ -47,8 +43,8 @@ public:
             Rear = Front;
         };
     };
-    void Add_Rear(T element){
-        node* NEW = new node();
+    void Add_Rear(Airplane element){
+        node* NEW;
         NEW->data = element;
         NEW->next = nullptr;
         Rear->next = NEW;

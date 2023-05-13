@@ -7,11 +7,11 @@
 #include <cstdlib>
 using namespace std;
 
-double randomize (int j)
+float Generate_Random(int c)
 {
-    srand(time(0));
-    return rand() / double(j);
-}
+    float r = (rand() % 101) / 100.0;
+    return (c-0.5) + r;
+};
 
 int main() {
 
@@ -39,9 +39,9 @@ int main() {
             cout << plane1.getTarrival();
         }
     }
-/*
+
         // Check if the runway is free and there are planes waiting
-        if (runway.hasAirplane() && runway.getFirstAirplane().getRemainingServiceTime() == 0) {
+        if (runway.isEmpty() && runway.getFirstAirplane().getRemainingServiceTime() == 0) {
             Airplane airplane = runway.removeFirstAirplane();
             airplane.startService(clock);
         }
@@ -53,7 +53,7 @@ int main() {
         if (runway.hasAirplane() && runway.getFirstAirplane().getRemainingServiceTime() > 0) {
             runway.getFirstAirplane().decrementServiceTime();
         }
-    }*/
+    }
 
     return 0;
 }

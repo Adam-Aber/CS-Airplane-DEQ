@@ -9,7 +9,7 @@
 
 class Runway {
 private:
-    DEQ<Airplane> AirplaneQ;
+    DEQ AirplaneQ;
     int Tlanding;
 public:
     Runway(int t);
