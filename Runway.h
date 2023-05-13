@@ -3,6 +3,8 @@
 //
 #include "Airplane.h"
 #include "deque.h"
+#include <iostream>
+using namespace std;
 #ifndef DEQSIMULATION_RUNWAY_H
 #define DEQSIMULATION_RUNWAY_H
 
@@ -32,6 +34,7 @@ bool Runway::isEmpty() {
 
 void Runway::addAirplane(Airplane a) {
    AirplaneQ.Add_Rear(a);
+   cout << a.getTarrival();
 }
 
 

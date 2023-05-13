@@ -21,12 +21,12 @@ int main() {
 
     Runway runway(TLand);
     float nextPlaneIn = Generate_Random(Dt);
-    cout << nextPlaneIn;
-/*
+    //cout << nextPlaneIn;
+
     Airplane plane1(nextPlaneIn);
     runway.addAirplane(plane1); // Add the plane to the runway queue
     cout << plane1.getTarrival();
-
+/*
     int time = 0;
     while (time < Tmax) { // as long as the simulation is working
         // Check for new arrivals
